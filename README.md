@@ -1,9 +1,9 @@
 # Grupo 10 - Sistema de Gestão de Tarefas (TaskFlow)
 
-[cite_start]Este projeto consiste em um sistema para controle de tarefas de uma pequena equipe, permitindo o gerenciamento de usuários, atribuição de atividades e acompanhamento de status[cite: 70, 72].
+Este projeto consiste em um sistema para controle de tarefas de uma pequena equipe, permitindo o gerenciamento de usuários, atribuição de atividades e acompanhamento de status.
 
 ## 🚀 Objetivo
-[cite_start]Desenvolver uma ferramenta prática que auxilie na organização de fluxos de trabalho, garantindo que cada tarefa tenha um responsável, prazo e prioridade definidos[cite: 72, 74].
+Desenvolver uma ferramenta prática que auxilie na organização de fluxos de trabalho, garantindo que cada tarefa tenha um responsável, prazo e prioridade definidos.
 
 ## 📋 Funcionalidades Principais (Escopo)
 * **Gestão de Usuários:** Cadastro de nome, e-mail e função (ex: Desenvolvedor).
@@ -21,7 +21,7 @@
 ## 🛠️ Tecnologias Sugeridas
 * **Frontend:** HTML5, CSS3. (me passem as que vcs usarem que eu edito antes da apresentação)
 * **Lógica:** JavaScript.
-* [cite_start]**Versionamento:** GitHub[cite: 10].
+* **Versionamento:** GitHub].
 
 ## 👥 Equipe (Grupo 10)
 * **Documentação & GitHub:** João Victor Custodio 
@@ -31,7 +31,7 @@
 
 ## 🗓️ Cronograma de Entregas
 * **Documentação Inicial:** 30/03/2026
-* [cite_start]**Apresentação Final:** 27/04/2026 [cite: 11]
+* **Apresentação Final:** 27/04/2026
 
 ## ⚠️ Dificuldades Encontradas
 *(Espaço reservado para documentar os desafios técnicos durante o desenvolvimento, conforme solicitado pelo professor)*.
