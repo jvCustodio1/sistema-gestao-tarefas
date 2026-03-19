@@ -6,11 +6,11 @@
 [cite_start]Desenvolver uma ferramenta prática que auxilie na organização de fluxos de trabalho, garantindo que cada tarefa tenha um responsável, prazo e prioridade definidos[cite: 72, 74].
 
 ## 📋 Funcionalidades Principais (Escopo)
-* [cite_start]**Gestão de Usuários:** Cadastro de nome, e-mail e função (ex: Desenvolvedor)[cite: 76, 78, 80].
-* [cite_start]**Gestão de Tarefas:** Registro de título, descrição, prioridade e prazo[cite: 81, 83, 86].
-* [cite_start]**Associação:** Vinculação direta de uma tarefa a um responsável[cite: 87, 89].
-* [cite_start]**Controle de Status:** Acompanhamento através dos estados: *A Fazer*, *Em Andamento* e *Concluído*[cite: 90, 92, 94].
-* [cite_start]**Filtros e Relatórios:** Listagem por responsável, prioridade ou status, com cálculo de total de tarefas concluídas[cite: 95, 97, 100, 103].
+* **Gestão de Usuários:** Cadastro de nome, e-mail e função (ex: Desenvolvedor).
+***Gestão de Tarefas:** Registro de título, descrição, prioridade e prazo.
+***Associação:** Vinculação direta de uma tarefa a um responsável.
+* **Controle de Status:** Acompanhamento através dos estados: *A Fazer*, *Em Andamento* e *Concluído*.
+* **Filtros e Relatórios:** Listagem por responsável, prioridade ou status, com cálculo de total de tarefas concluídas[].
 
 ## 🏗️ Estrutura do Repositório
 * `/frontend`: Arquivos de interface, visual e layout (Responsabilidade: 2 integrantes).
