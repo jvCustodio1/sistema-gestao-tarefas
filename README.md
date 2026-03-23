@@ -25,9 +25,9 @@ Desenvolver uma ferramenta prática que auxilie na organização de fluxos de tr
 
 ## 👥 Equipe (Grupo 10)
 * **Documentação & GitHub:** João Victor Custodio 
-* **Frontend:** [Nome Integrante 1] e [Nome Integrante 2]
-* **Lógica (JS):** [Nome Integrante 3]
-* **Backend:** [Nome Integrante 4]
+* **Frontend:** CAMILY FERREIRA e LUIZ MONTEIRO.
+* **Lógica (JavaScript):** MATHEUS CALIXTO LEAL.
+* **Backend:** GABRIEL MISTRONI.
 
 ## 🗓️ Cronograma de Entregas
 * **Documentação Inicial:** 30/03/2026
