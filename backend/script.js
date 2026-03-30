@@ -63,6 +63,6 @@ function apagarLista() {
         renderizarTarefas()
         const mensagem = document.getElementById("mensagem")
         mensagem.textContent = "Excluido com sucesso";
-        mensagem.style.color= "black"
+        mensagem.style.color= "green"
     }
 }
