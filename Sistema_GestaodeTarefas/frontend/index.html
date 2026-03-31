@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- TELA INICIAL -->
+<div id="inicio" class="inicio">
+
+<div class="inicio-container">
+
+<div class="inicio-texto">
+
+<h1>Bem-vindo<br>ao TaskFlow</h1>
+
+<p>Gerencie suas tarefas com facilidade.</p>
+
+<button class="btn-iniciar" onclick="iniciarSistema()">
+Iniciar Agora
+</button>
+
+</div>
+
+<div class="inicio-imagem">
+<img src="img/robo.png" alt="Robô TaskFlow">
+</div>
+
+</div>
+
+</div>
+
+<!-- SISTEMA -->
+<div id="sistema" style="display:none;">
+<div class="dashboard">
+<div class="sidebar">
+
+<button class="nav-btn" onclick="mostrarPagina('usuarios')">Usuários</button>
+<button class="nav-btn" onclick="mostrarPagina('tarefas')">Tarefas</button>
+<button class="nav-btn" onclick="mostrarPagina('lista')">Lista</button>
+<button class="nav-btn" onclick="mostrarPagina('excluidas')">Excluídas</button>
+</div>
+
+<div class="main">
+
+<div id="usuarios" class="pagina">
+<div class="card">
+<h2>Cadastro de Usuário</h2>
+<div class="form-group">
+<input type="text" id="nomeUsuario" placeholder="Nome">
+<input type="email" id="emailUsuario" placeholder="Email">
+</div>
+
+<div id="erroEmail" class="erro">
+Digite um email válido do Gmail (@gmail.com)
+</div>
+
+<br>
+
+<button onclick="cadastrarUsuario()">Salvar</button>
+
+</div>
+</div>
+
+<div id="tarefas" class="pagina hidden">
+<div class="card">
+<h2>Nova Tarefa</h2>
+
+<div class="form-group">
+<input type="text" id="titulo" placeholder="Título">
+<input type="text" id="descricao" placeholder="Descrição">
+</div>
+
+<br>
+
+<div class="form-group">
+<select id="status">
+<option>A Fazer</option>
+<option>Em Andamento</option>
+<option>Concluído</option>
+</select>
+
+<select id="usuarioSelect"></select>
+</div>
+
+<br>
+
+<button onclick="cadastrarTarefa()">Adicionar</button>
+
+</div>
+</div>
+
+<div id="lista" class="pagina hidden">
+<div class="card">
+<h2>Lista de Tarefas</h2>
+<div id="listaTarefas"></div>
+</div>
+</div>
+
+<div id="excluidas" class="pagina hidden">
+<div class="card">
+<h2>Tarefas Excluídas</h2>
+<div id="listaExcluidas"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="../backend/script.js"></script>
+
+</body>
+</html>
