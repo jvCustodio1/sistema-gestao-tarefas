@@ -1,3 +1,8 @@
+# Backend da aplicação usando Python com Flask
+# Recebe requisições e responde para o sistema
+# Dados armazenados em banco SQLite em arquivo .db
+# Tabelas: usuários, tarefas e tarefas excluídas
+
 import os
 import sqlite3
 
@@ -9,10 +14,12 @@ db = os.path.join(os.path.dirname(__file__), "taskflow.db")
 STATUS_VALIDOS = {"A Fazer", "Em Andamento", "Concluído"}
 
 app = Flask(__name__)
+# Configuração do CORS para permitir comunicação entre frontend e backend
 CORS(app)
 
 
 def conectar():
+    # Conecta ao banco SQLite
     c = sqlite3.connect(db)
     c.row_factory = sqlite3.Row
     c.execute("PRAGMA foreign_keys = ON")
@@ -20,11 +27,13 @@ def conectar():
 
 
 def email_gmail_ok(email):
+    # Validação básica para emails Gmail
     e = (email or "").strip().lower()
     return e.endswith("@gmail.com")
 
 
 def criar_tabelas():
+    # Cria tabelas para usuários, tarefas e tarefas excluídas
     c = conectar()
     try:
         c.executescript(
