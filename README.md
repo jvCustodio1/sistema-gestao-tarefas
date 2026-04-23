@@ -24,7 +24,8 @@ Desenvolver uma ferramenta prática que auxilie na organização de fluxos de tr
 * **Versionamento:** GitHub].
 
 ## 👥 Equipe (Grupo 10)
-* **Documentação & GitHub:** João Victor Custodio 
+* **Documentação:**
+**GitHub:** João Victor Custodio 
 * **Frontend:** CAMILY FERREIRA e LUIZ MONTEIRO.
 * **Lógica (JavaScript):** MATHEUS CALIXTO LEAL.
 * **Backend:** GABRIEL MISTRONI.
