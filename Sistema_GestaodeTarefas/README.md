@@ -34,4 +34,10 @@ Desenvolver uma ferramenta prática que auxilie na organização de fluxos de tr
 * **Apresentação Final:** 27/04/2026
 
 ## ⚠️ Dificuldades Encontradas
-*(Espaço reservado para documentar os desafios técnicos durante o desenvolvimento, conforme solicitado pelo professor)*.
+- Manipular elementos da interface, como botões e campos de texto, além de controlar o que aparece ou desaparece na tela  
+- Definir uma forma de armazenar os dados (usuários e tarefas) e garantir que eles possam ser recuperados depois  
+- Implementar o sistema de login, com cadastro de usuários, validação de senha e controle de emails duplicados  
+- Trabalhar com datas, incluindo conversão e formatação correta para exibição  
+- Organizar a navegação entre as telas da aplicação  
+- Desenvolver as funcionalidades principais, como adicionar, editar e excluir tarefas  
+- Validar os dados para evitar erros, como campos vazios ou informações incorretas  
