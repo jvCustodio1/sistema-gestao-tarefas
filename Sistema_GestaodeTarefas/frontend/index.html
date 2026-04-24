@@ -7,117 +7,221 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lucide@latest"></script>
 
+<style>
+.hidden { display: none; }
+</style>
 </head>
 
 <body>
 
 <!-- TELA INICIAL -->
 <div id="inicio" class="inicio">
-
-<div class="inicio-container">
-
-<div class="inicio-texto">
-
-<h1>Bem-vindo<br>ao TaskFlow</h1>
-
-<p>Gerencie suas tarefas com facilidade.</p>
-
-<button class="btn-iniciar" onclick="iniciarSistema()">
-Iniciar Agora
-</button>
-
+  <div class="inicio-container">
+    <div class="inicio-texto">
+      <h1>Bem-vindo<br>ao TaskFlow</h1>
+      <p>Gerencie suas tarefas com facilidade.</p>
+      <button onclick="abrirLogin()">Iniciar Agora</button>
+    </div>
+    <div class="inicio-imagem">
+      <img src="img/robo.png">
+    </div>
+  </div>
 </div>
 
-<div class="inicio-imagem">
-<img src="img/robo.png" alt="Robô TaskFlow">
+<!-- LOGIN -->
+<div id="login" class="inicio auth" style="display:none;">
+  <div class="inicio-container">
+    <div class="inicio-texto">
+      <h2>Entrar no TaskFlow</h2>
+      <input type="email" id="loginEmail" placeholder="Email">
+      <input type="password" id="loginSenha" placeholder="Senha">
+
+      <button onclick="fazerLogin()">Entrar</button>
+
+      <!-- 🔥 CORRIGIDO -->
+      <a href="#" onclick="esqueciSenha()">Esqueci minha senha</a>
+
+      <p style="margin-top:20px;">
+        Não tem conta?
+        <a href="#" onclick="abrirCadastro()">Criar conta</a>
+      </p>
+    </div>
+  </div>
 </div>
 
-</div>
+<!-- CADASTRO -->
+<div id="cadastro" class="inicio auth" style="display:none;">
+  <div class="inicio-container">
+    <div class="inicio-texto">
+      <h2>Criar Conta</h2>
 
+      <input type="text" id="cadNome" placeholder="Nome">
+      <input type="email" id="cadEmail" placeholder="Email">
+
+      <select id="cadObjetivo">
+        <option value="">Qual seu objetivo com o TaskFlow?</option>
+        <option>Organizar estudos</option>
+        <option>Gerenciar trabalho</option>
+        <option>Controle pessoal</option>
+        <option>Outro</option>
+      </select>
+
+      <input type="password" id="cadSenha" placeholder="Senha">
+      <input type="password" id="cadConfirmarSenha" placeholder="Confirmar senha">
+
+      <button onclick="cadastrarConta()">Criar Conta</button>
+
+      <p style="margin-top:20px;">
+        Já tem conta?
+        <a href="#" onclick="voltarLogin()">Fazer login</a>
+      </p>
+    </div>
+  </div>
 </div>
 
 <!-- SISTEMA -->
 <div id="sistema" style="display:none;">
-<div class="dashboard">
-<div class="sidebar">
+  <div class="dashboard">
 
-<button class="nav-btn" onclick="mostrarPagina('usuarios')">Usuários</button>
-<button class="nav-btn" onclick="mostrarPagina('tarefas')">Tarefas</button>
-<button class="nav-btn" onclick="mostrarPagina('lista')">Lista</button>
-<button class="nav-btn" onclick="mostrarPagina('excluidas')">Excluídas</button>
-</div>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
 
-<div class="main">
+      <div class="perfil-sidebar" onclick="mostrarPagina('perfil')">
+        <img id="fotoPerfilPreview" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+        <span>Perfil</span>
+      </div>
 
-<div id="usuarios" class="pagina">
-<div class="card">
-<h2>Cadastro de Usuário</h2>
-<div class="form-group">
-<input type="text" id="nomeUsuario" placeholder="Nome">
-<input type="email" id="emailUsuario" placeholder="Email">
-</div>
+      <div class="menu-item" onclick="mostrarPagina('home')">
+        <i data-lucide="home"></i>
+        <span>Início</span>
+      </div>
 
-<div id="erroEmail" class="erro">
-Digite um email válido do Gmail (@gmail.com)
-</div>
+      <div class="menu-item" onclick="mostrarPagina('tarefas')">
+        <i data-lucide="plus-circle"></i>
+        <span>Nova</span>
+      </div>
 
-<br>
+      <div class="menu-item" onclick="mostrarPagina('lista')">
+        <i data-lucide="list"></i>
+        <span>Tarefas</span>
+      </div>
 
-<button onclick="cadastrarUsuario()">Salvar</button>
+      <div class="menu-item" onclick="mostrarPagina('concluidas')">
+        <i data-lucide="check-circle"></i>
+        <span>Concluídas</span>
+      </div>
 
-</div>
-</div>
+      <div class="menu-item" onclick="mostrarPagina('relatorio')">
+        <i data-lucide="file-text"></i>
+        <span>Relatório</span>
+      </div>
 
-<div id="tarefas" class="pagina hidden">
-<div class="card">
-<h2>Nova Tarefa</h2>
+    </div>
 
-<div class="form-group">
-<input type="text" id="titulo" placeholder="Título">
-<input type="text" id="descricao" placeholder="Descrição">
-</div>
+    <!-- CONTEÚDO -->
+    <div class="main">
 
-<br>
+      <!-- HOME -->
+      <div id="home" class="pagina">
+        <div class="card home-bg"></div>
+      </div>
 
-<div class="form-group">
-<select id="status">
-<option>A Fazer</option>
-<option>Em Andamento</option>
-<option>Concluído</option>
-</select>
+      <!-- PERFIL -->
+      <div id="perfil" class="pagina hidden">
+        <div class="card perfil-card">
+          <div class="perfil-topo">
 
-<select id="usuarioSelect"></select>
-</div>
+            <div class="foto-container">
+              <img id="fotoPerfil" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
 
-<br>
+              <label class="btn-foto">
+                Trocar Foto
+                <input type="file" accept="image/*" onchange="alterarFoto(event)">
+              </label>
 
-<button onclick="cadastrarTarefa()">Adicionar</button>
+              <button class="btn-sair" onclick="logout()">Sair</button>
+            </div>
 
-</div>
-</div>
+            <div class="perfil-info">
+              <p><strong>Nome:</strong> <span id="perfilNome"></span></p>
+              <p><strong>Email:</strong> <span id="perfilEmail"></span></p>
 
-<div id="lista" class="pagina hidden">
-<div class="card">
-<h2>Lista de Tarefas</h2>
-<div id="listaTarefas"></div>
-</div>
-</div>
+              <div style="margin-top:15px;">
+                <strong>Senha:</strong>
+                <div style="display:flex; gap:10px;">
+                  <input type="password" id="perfilSenha" readonly>
+                  <button type="button" onclick="toggleSenha()">👁</button>
+                </div>
+              </div>
 
-<div id="excluidas" class="pagina hidden">
-<div class="card">
-<h2>Tarefas Excluídas</h2>
-<div id="listaExcluidas"></div>
-</div>
-</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <!-- NOVA TAREFA -->
+      <div id="tarefas" class="pagina hidden">
+        <div class="card">
+          <h2>Nova Tarefa</h2>
 
-</div>
-</div>
+          <input type="text" id="tituloInput" placeholder="Título">
+          <input type="text" id="descricaoInput" placeholder="Descrição">
+
+          <label>Data de Início</label>
+          <input type="date" id="dataInicio">
+
+          <label>Prazo Final</label>
+          <input type="date" id="dataFim">
+
+          <select id="status">
+            <option>A Fazer</option>
+            <option>Em Andamento</option>
+          </select>
+
+          <!-- 🔥 CORRIGIDO -->
+          <button id="btnTarefa" onclick="cadastrarTarefa()">Adicionar</button>
+        </div>
+      </div>
+
+      <!-- LISTA -->
+      <div id="lista" class="pagina hidden">
+        <div class="card">
+          <h2>Minhas Tarefas</h2>
+          <div id="listaTarefas"></div>
+        </div>
+      </div>
+
+      <!-- CONCLUÍDAS -->
+      <div id="concluidas" class="pagina hidden">
+        <div class="card">
+          <h2>Concluídas</h2>
+          <div id="listaConcluidas"></div>
+        </div>
+      </div>
+
+      <!-- RELATÓRIO -->
+      <div id="relatorio" class="pagina hidden">
+        <div class="card">
+          <h2>Relatório</h2>
+          <button onclick="baixarRelatorioTxt()">Baixar TXT</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <script src="../backend/script.js"></script>
+
+<script>
+function mostrarPagina(paginaId) {
+  document.querySelectorAll(".pagina").forEach(p => p.classList.add("hidden"));
+  document.getElementById(paginaId).classList.remove("hidden");
+}
+lucide.createIcons();
+</script>
 
 </body>
 </html>
